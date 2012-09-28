@@ -619,11 +619,17 @@ activity-add-folderview-general
 activity-add-folderview-music
 activity-add-folderview-pictures
 activity-add-folderview-video
+activity-add-widget
+activity-add-widget-at
 activity-desktop
 activity-folderview
+activity-load-new-config
 activitymanager
+activity-newspaper
+activity-search-and-launch
 battery
 clock
+currentappcontrol
 daisy
 devicenotifier
 launcherclassic
@@ -639,6 +645,7 @@ networkmanager
 notifications
 pager
 panelbottom
+panel_netbook
 paneltop
 pastebin
 printer
@@ -660,6 +667,7 @@ trash
 veromix
 weather-weather
 weather-yawp
+
 </fillin>
  </item>
  <item>
