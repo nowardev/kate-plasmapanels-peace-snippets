@@ -16,7 +16,29 @@ clock.writeConfig("useCustomColor", "true")
 clock.writeConfig("plainClockColor", "255,255,255")
 clock.writeConfig("plainClockDrawShadow", "false")</fillin>
  </item>
+  <item>
+  <displayprefix></displayprefix>
+  <match>panel_netbook</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>var panel = new Panel("netpanel")
+if (panelIds.length == 1) {
+   panel.location = 'top'
+	//panel.hiding= 'autohide' //"windowscover" or "windowsbelow"
+	//panel.length = (screenrect.width/2)-(screenrect.width/16);
+	//panel.height = screenrect.height/30;
+	//panel.alignment = "left" "right" "center"
+	//panel.locked = false true
+} </fillin>
+ </item>
  <item>
+  <displayprefix></displayprefix>
+  <match>currentappcontrol</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>var currentappcontrol =  panel.addWidget("currentappcontrol")</fillin>
+ </item>
+  <item>
   <displayprefix></displayprefix>
   <match>menubar</match>
   <displaypostfix></displaypostfix>
@@ -126,16 +148,17 @@ systemtray.writeConfig("ShowUnknown","false")
   <match>panelbottom</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>var screenrect = screenGeometry(0); // get information about your screen h w 
+  <fillin>var screenrect = screenGeometry(0); // get information about your screen h w
  
 var panel = new Panel
 if (panelIds.length == 1) {
     panel.location = 'bottom'
     //panel.location = 'top'
-    //panel.hiding= 'autohide' //"windowscover" or "windowsbelow" 
+    //panel.hiding= 'autohide' //"windowscover" or "windowsbelow"
     //panel.length = (screenrect.width/2)-(screenrect.width/16);
     //panel.height = screenrect.height/30;
     //panel.alignment = "left" "right" "center"
+ 	//panel.locked = false true
  
 }
 </fillin>
@@ -145,16 +168,17 @@ if (panelIds.length == 1) {
   <match>paneltop</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>var screenrect = screenGeometry(0); // get information about your screen h w 
+  <fillin>var screenrect = screenGeometry(0); // get information about your screen h w
  
 var panel = new Panel
 if (panelIds.length == 1) {
     //panel.location = 'bottom'
     panel.location = 'top'
-    //panel.hiding= 'autohide' //"windowscover" or "windowsbelow" 
+    //panel.hiding= 'autohide' //"windowscover" or "windowsbelow"
     //panel.length = (screenrect.width/2)-(screenrect.width/16);
     //panel.height = screenrect.height/30;
     //panel.alignment = "left" "right" "center"
+    //panel.locked = false true
  
 }</fillin>
  </item>
@@ -278,11 +302,11 @@ function RemoveOldPanels()
        }
         else 	{
 	  panelById(panelIds[i]).remove()
-	  	} 
+	  	}
                                     }
 }
 
-RemoveOldPanels() //load the function 
+RemoveOldPanels() //load the function
  </fillin>
  </item>
  <item>
@@ -324,6 +348,52 @@ launcher.writeConfig("iconLocation", "start-here-kde")</fillin>
  </item>
  <item>
   <displayprefix></displayprefix>
+  <match>activity-search-and-launch</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> var activity = new Activity("sal")
+activity.name = i18n("Search and Launch")
+
+</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>activity-load-new-config</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> activity.reloadConfig()
+
+</fillin>
+ </item>
+  <item>
+  <displayprefix></displayprefix>
+  <match>activity-add-widget-at</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> var news=  activity.addWidgetAt("news", 0, 0)
+
+</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>activity-add-widget</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> var news = activity.addWidget("news")
+
+</fillin>
+ </item>
+  <item>
+  <displayprefix></displayprefix>
+  <match>activity-newspaper</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> var activity = new Activity("newspaper")
+activity.name = i18n("News Paper")
+</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
   <match>activity-folderview</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
@@ -345,8 +415,8 @@ activity.writeConfig("iconsLocked","false")
 activity.writeConfig("mimeFilter","")
 activity.writeConfig("numTextLines","2")
 activity.writeConfig("url","desktop:/")
-activity.writeConfig("wallpaperplugin","image")
-activity.writeConfig("previewPlugins","imagethumbnail,jpegthumbnail,kffmpegthumbnailer")
+activity.writeConfig("wallpaperplugin","image") //   "clock" "virus" "org.kde.potd" "mandelbrot" "weather" "pattern" "marble" //activity.writeConfig("wallpaperpluginmode", "Slideshow" )
+activity.writeConfig("previewPlugins","imagethumbnail,jpegthumbnail,kffmpegthumbnailer") 
   
 
  
@@ -361,7 +431,7 @@ dolphin.writeConfig("Url", "dolphin.desktop")
 dolphin.geometry = new QRectF(0, screenrect.height/7, screenrect.width/10, screenrect.height/10)
 
  var a = screenrect.height/9
- var b = screenrect.height/5 
+ var b = screenrect.height/5
 
 var trash = activity.addWidget("trash")
 trash.geometry = new QRectF(0, a + b , screenrect.width/12, screenrect.height/12)
@@ -542,7 +612,7 @@ dev.writeConfig("launchers", "file:////usr/share/applications/kde4/kdesvn.deskto
   <match>snippet-help</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>type one of this keyword and press ENTER kate will add yo your code some handy stuff 
+  <fillin>${cursor} type one of this keyword and press ENTER kate will add yo your code some handy stuff
 
 activity-add-folderview-download
 activity-add-folderview-general
