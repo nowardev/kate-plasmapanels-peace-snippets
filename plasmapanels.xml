@@ -16,7 +16,7 @@ clock.writeConfig("useCustomColor", "true")
 clock.writeConfig("plainClockColor", "255,255,255")
 clock.writeConfig("plainClockDrawShadow", "false")</fillin>
  </item>
-  <item>
+ <item>
   <displayprefix></displayprefix>
   <match>panel_netbook</match>
   <displaypostfix></displaypostfix>
@@ -38,7 +38,7 @@ if (panelIds.length == 1) {
   <displayarguments></displayarguments>
   <fillin>var currentappcontrol =  panel.addWidget("currentappcontrol")</fillin>
  </item>
-  <item>
+ <item>
   <displayprefix></displayprefix>
   <match>menubar</match>
   <displaypostfix></displaypostfix>
@@ -372,7 +372,7 @@ activity.name = i18n("Search and Launch")
 
 </fillin>
  </item>
-  <item>
+ <item>
   <displayprefix></displayprefix>
   <match>activity-add-widget-at</match>
   <displaypostfix></displaypostfix>
@@ -390,7 +390,7 @@ activity.name = i18n("Search and Launch")
 
 </fillin>
  </item>
-  <item>
+ <item>
   <displayprefix></displayprefix>
   <match>activity-newspaper</match>
   <displaypostfix></displaypostfix>
@@ -688,8 +688,10 @@ trash
 veromix
 weather-weather
 weather-yawp
+ 
 
-get the snippets updated awk '/match/{gsub(/match/,"");gsub(/<>/,"");gsub(/<\/>/,"");print $1}' plasmapanelscollection.xml | sort >/tmp/aa
+awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}' plasmapanelscollection.xml | sort >/tmp/snippets-help ; kate /tmp/snippets-help 
+
 
 </fillin>
  </item>
@@ -816,11 +818,11 @@ var ktp_presence = panel.addWidget ("ktp_presence")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>irc</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>irc</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var irc = panel.addWidget ("IRCPlasmoid")
 //irc.currentConfigGroup = new Array('')
 irc.writeConfig("address", "irc.freenode.org")
@@ -831,66 +833,66 @@ irc.writeConfig("port","6667")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>calculator</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>calculator</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var calculator = panel.addWidget ("calculator")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>character-selector</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>character-selector</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var charselect = panel.addWidget ("charselect")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>allarm-clock</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>allarm-clock</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var allarm = panel.addWidget ("kde-plasma-alarm-clock")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>keyboard</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>keyboard</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var keyboard = panel.addWidget ("plasmaboard")
 keyboard.writeConfig("layout","plasmaboard/extended.xml") //full.xml tablet.xml
 </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>bookmarks</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>bookmarks</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var bookmarks = panel.addWidget ("bookmarks")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>qalculate</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>qalculate</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var qalculate = panel.addWidget ("qalculate")
   </fillin>
  </item>
  <item>
- <displayprefix></displayprefix>
- <match>social-news</match>
- <displaypostfix></displaypostfix>
- <displayarguments></displayarguments>
- <fillin>	
+  <displayprefix></displayprefix>
+  <match>social-news</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>	
 var socialnews = panel.addWidget ("opendesktop_activities")
   </fillin>
  </item>
