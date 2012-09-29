@@ -258,7 +258,7 @@ launcher.writeConfig("iconClickActivation", "true")
 launcher.writeConfig("contentsExtenderPosition", "1")
 launcher.writeConfig("searchHistory", "firefox")
 launcher.writeConfig("showSearchBox", "true")
-launcher.writeConfig("partData","model=Places&amp;type=list&amp;version=1.0\nmodel=Devices%2FFixed&amp;type=list&amp;version=1.0\nmodel=Devices%2FRemovable&amp;type=list&amp;version=1.0\n") </fillin>
+launcher.writeConfig("partData","model=Devices%2FRemovable&amp;type=list&amp;version=1.0\nmodel=Places&amp;type=list&amp;version=1.0\nmodel=Devices%2FFixed&amp;type=list&amp;version=1.0\n") </fillin>
  </item>
  <item>
   <displayprefix></displayprefix>
