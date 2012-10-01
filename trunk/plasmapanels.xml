@@ -909,5 +909,19 @@ widget.currentConfigGroup = new Array('Shortcuts')
 widget.globalShortcut = "Ctrl+F13"
   </fillin>
  </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>check-widget-installed</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>var widget = "menubar" /* to get widget names
+				in your system run in desktop console this code :
+				
+				for( i = 0;  i &lt; knownWidgetTypes.length; ++i ) { print (knownWidgetTypes[i])} 
+				
+				*/
+				
+ if (knownWidgetTypes.indexOf(widget) > -1) { print("your system has this widget:    "+widget+"    installed!!")/*panel.addWidget(widget)*/ } else {print("your system doesn't provide "+widget )}	</fillin>
+ </item>
 </snippets>
 
