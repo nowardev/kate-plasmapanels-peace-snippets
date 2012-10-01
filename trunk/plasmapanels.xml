@@ -343,7 +343,7 @@ launcher.globalShortcut = "F13"
   <match>trash</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>panel.addWidget("trash")</fillin>
+  <fillin>var trash = panel.addWidget("trash")</fillin>
  </item>
  <item>
   <displayprefix></displayprefix>
@@ -543,7 +543,7 @@ folderview.geometry = new QRectF(0,screenrect.height,screenrect.width/4,screenre
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
   <fillin>var screenrect = screenGeometry(0)
-var shared= "/tmp"
+var shared= "${cursor}/tmp"
 var folderview = activity.addWidget("folderview")
 folderview.writeConfig("url", shared )
 folderview.geometry = new QRectF(screenrect.width/4,screenrect.height,screenrect.width/4,screenrect.height/3)</fillin>
@@ -605,7 +605,7 @@ dev.writeConfig("launchers", "file:////usr/share/applications/kde4/kdesvn.deskto
   <displayarguments></displayarguments>
   <fillin>var launcher = panel.addWidget("homerunlauncher")
 launcher.currentConfigGroup = new Array('Shortcuts') 
-launcher.globalShortcut = "F13"
+launcher.globalShortcut = "${cursor}F13"
  </fillin>
  </item>
  <item>
@@ -751,7 +751,7 @@ awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}'  ~/
   <match>spacer</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>panel.addWidget("panelspacer_internal")
+  <fillin>var spacer = panel.addWidget("panelspacer_internal")
 </fillin>
  </item>
  <item>
@@ -762,7 +762,7 @@ awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}'  ~/
   <fillin>var weather = panel.addWidget("weather")
 weather.writeConfig("Share","false")
 weather.writeConfig("pressureUnit","5008")
-weather.writeConfig("source","wettercom|weather|Verona, Veneto, IT|IT0VE0284;Verona")
+weather.writeConfig("source","${cursor}wettercom|weather|Verona, Veneto, IT|IT0VE0284;Verona")
 weather.writeConfig("speedUnit","9001")
 weather.writeConfig("temperatureUnit","6001")
 weather.writeConfig("updateInterval","30")
@@ -808,7 +808,7 @@ weather.writeConfig("visibilityUnit","2007")
   <fillin>	
 var kwinbutton = panel.addWidget ("kwinbutton")
 //kwinbutton.currentConfigGroup = new Array('Configuration')
-kwinbutton.writeConfig("ActionType", "1")
+kwinbutton.writeConfig("ActionType", "${cursor}1")
 kwinbutton.writeConfig("Maximized", "0")
   </fillin>
  </item>
@@ -889,7 +889,7 @@ var bookmarks = panel.addWidget ("bookmarks")
   <displayarguments></displayarguments>
   <fillin>	
 var qalculate = panel.addWidget ("qalculate")
-  </fillin>
+ ${cursor}</fillin>
  </item>
  <item>
   <displayprefix></displayprefix>
@@ -906,7 +906,7 @@ var socialnews = panel.addWidget("opendesktop_activities")
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
   <fillin>
-var widget = panel.addWidget("launcher")
+var widget = panel.addWidget("${cursor}launcher")
 widget.currentConfigGroup = new Array('Shortcuts')
 widget.globalShortcut = "Ctrl+F13"
   </fillin>
@@ -955,6 +955,60 @@ print("your system doesn't provide "+widget )
    print (" ")
  
 } </fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>current</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>currentConfigGroup = new Array('${cursor}Shortcuts')</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>global-shortcut</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>globalShortcut = "${cursor}F13"
+</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>write-config</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>writeConfig("${cursor} somestring","somevalue")</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>add-widget-to-panel</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>var widget = "${cursor}your_widgetname"
+
+var widget = panel.addWidget(widget)
+//widget.writeConfig("somestring", "somevalue")</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>panel-load-new-config</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>panel.reloadConfig()
+</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>activity-writeconfig</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>activity.writeConfig("${cursor}somstring", "somevalue")</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>load-template</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>loadTemplate("org.kde.plasma-desktop.${cursor}nowardevPanel")</fillin>
  </item>
 </snippets>
 
