@@ -937,4 +937,23 @@ var widget = panel.addWidget(widget)
 print("your system doesn't provide "+widget )
 }	</fillin>
  </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>add-all-widget-system-installed</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin> //copy and paste the code in desktop console 
+ 
+ for( i = 0;  i &lt; knownWidgetTypes.length; ++i ) { 
+   
+   print 
+   print ("var widget = "+knownWidgetTypes[i] )
+   print ("var widget = panel.addWidget(widget)" )
+   print ("widget.writeConfig(\"somestring\", \"somevalue\")")
+   print ("widget.writeConfig(\"somestring\", \"somevalue\")")
+   print (" ")
+ 
+} </fillin>
+ </item>
 </snippets>
+
