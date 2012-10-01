@@ -638,8 +638,8 @@ activity-load-new-config
 activitymanager
 activity-newspaper
 activity-search-and-launch
+add-all-widget-system-installed
 allarm-clock
-awk
 battery
 bookmarks
 calculator
@@ -691,9 +691,10 @@ trash
 veromix
 weather-weather
 weather-yawp
+
  
 
-awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}' plasmapanelscollection.xml | sort >/tmp/snippets-help ; kate /tmp/snippets-help 
+awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}'  ~/.kde/share/apps/ktexteditor_snippets/data/*plasma*.xml | sort >/tmp/snippets-help ; kate /tmp/snippets-help 
 
 
 </fillin>
