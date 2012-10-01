@@ -950,8 +950,8 @@ print("your system doesn't provide "+widget )
    print 
    print ("var widget = "+knownWidgetTypes[i] )
    print ("var widget = panel.addWidget(widget)" )
-   print ("widget.writeConfig(\"somestring\", \"somevalue\")")
-   print ("widget.writeConfig(\"somestring\", \"somevalue\")")
+   print ("//widget.writeConfig(\"somestring\", \"somevalue\")")
+   print ("//widget.writeConfig(\"somestring\", \"somevalue\")")
    print (" ")
  
 } </fillin>
