@@ -624,7 +624,6 @@ launcher.globalShortcut = "F13"
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
   <fillin>${cursor} type one of this keyword and press ENTER kate will add yo your code some handy stuff
-
 activity-add-folderview-download
 activity-add-folderview-general
 activity-add-folderview-music
@@ -638,17 +637,22 @@ activity-load-new-config
 activitymanager
 activity-newspaper
 activity-search-and-launch
+activity-writeconfig
 add-all-widget-system-installed
+add-widget-to-panel
 allarm-clock
+awk
 battery
 bookmarks
 calculator
 character-selector
 check-widget-installed
 clock
+current
 currentappcontrol
 daisy
 devicenotifier
+global-shortcut
 instant-message-presence
 irc
 keyboard
@@ -658,6 +662,7 @@ launcher-homerun
 launcher-shelf
 launcher-standard
 launcher-takeoff
+load-template
 menubar
 menu-logout-exit
 menu-log-out-exit-standard
@@ -666,6 +671,7 @@ networkmanager
 notifications
 pager
 panel-bottom
+panel-load-new-config
 panel_netbook
 panel-top
 pastebin
@@ -691,6 +697,8 @@ trash
 veromix
 weather-weather
 weather-yawp
+write-config
+
 
  
 
