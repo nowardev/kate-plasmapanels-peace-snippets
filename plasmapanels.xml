@@ -639,10 +639,12 @@ activitymanager
 activity-newspaper
 activity-search-and-launch
 allarm-clock
+awk
 battery
 bookmarks
 calculator
 character-selector
+check-widget-installed
 clock
 currentappcontrol
 daisy
@@ -689,7 +691,6 @@ trash
 veromix
 weather-weather
 weather-yawp
-
  
 
 awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}' plasmapanelscollection.xml | sort >/tmp/snippets-help ; kate /tmp/snippets-help 
@@ -914,14 +915,26 @@ widget.globalShortcut = "Ctrl+F13"
   <match>check-widget-installed</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>var widget = "menubar" /* to get widget names
-				in your system run in desktop console this code :
+  <fillin>/* to get widget names
+in your system run in desktop console this code :
+
+for( i = 0;  i &lt; knownWidgetTypes.length; ++i ) { print (knownWidgetTypes[i])} 
 				
-				for( i = 0;  i &lt; knownWidgetTypes.length; ++i ) { print (knownWidgetTypes[i])} 
+*/
+
+var widget = "${cursor}your-widget-name" 
 				
-				*/
-				
- if (knownWidgetTypes.indexOf(widget) > -1) { print("your system has this widget:    "+widget+"    installed!!")/*panel.addWidget(widget)*/ } else {print("your system doesn't provide "+widget )}	</fillin>
+ if (knownWidgetTypes.indexOf(widget) > -1) { 
+print("your system has this widget:    "+widget+"    installed!!")
+/*
+var widget = panel.addWidget(widget)
+//widget.writeConfig("somestuff", "somevalue")
+//widget.writeConfig("somestuff", "somevalue")
+//widget.writeConfig("somestuff", "somevalue")
+*/
+ }
+ else {
+print("your system doesn't provide "+widget )
+}	</fillin>
  </item>
 </snippets>
-
