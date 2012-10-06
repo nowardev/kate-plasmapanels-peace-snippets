@@ -50,7 +50,8 @@ if (panelIds.length == 1) {
   <match>taskmanagerk-icon-only</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
-  <fillin>var icontasks = panel.addWidget("icontasks")
+  <fillin>var userhome =  userDataPath()
+var icontasks = panel.addWidget("icontasks")
 icontasks.writeConfig("groupClick","1")
 icontasks.writeConfig("iconScale","49")
 icontasks.writeConfig("launcherIcons","false")
@@ -71,7 +72,10 @@ icontasks.writeConfig("toolTips","0")
 icontasks.writeConfig("unity","true")
 //icontasks.writeConfig("Enabled","true")
 
-icontasks.currentConfigGroup = new Array('Launchers')
+icontasks.currentConfigGroup = new Array('DockManager') // CONFIGURE DOCKERS HELPERS
+icontasks.writeConfig("Enabled","true")	icontasks.writeConfig("EnabledHelpers",userhome+"/.local/share/dockmanager/scripts/kate.py,"+userhome+"/.local/share/dockmanager/scripts/konqueror.py,"+userhome+"/.local/share/dockmanager/scripts/krdc_menus.py,"+userhome+"/.local/share/dockmanager/scripts/rekonq.py,"+userhome+"/.local/share/dockmanager/scripts/akonadi.py,"+userhome+"/.local/share/dockmanager/scripts/firefox.py,"+userhome+"/.local/share/dockmanager/scripts/konsole.py,"+userhome+"/.local/share/dockmanager/scripts/dolphin.py,"+userhome+"/.local/share/dockmanager/scripts/kopete.py,"+userhome+"/.local/share/dockmanager/scripts/amarok.py")
+
+icontasks.currentConfigGroup = new Array('Launchers') // CONFIGURE LAUNCHERS
 icontasks.writeConfig("Items","file:///usr/share/applications/chromium-browser.desktop?wmClass=Chromium-browser,file:///usr/share/applications/firefox.desktop?wmClass=Firefox,file:///usr/share/applications/kde4/konversation.desktop?wmClass=Konversation,file:////usr/share/applications/kde4/dolphin.desktop?wmClass=Dolphin,file:///usr/share/applications/kde4/kate.desktop?wmClass=Kate,file:///usr/share/applications/kde4/konsole.desktop?wmClass=Konsole,file:///usr/share/applications/kde4/ksnapshot.desktop?wmClass=Ksnapshot,file:///usr/share/applications/vlc.desktop?wmClass=Vlc,file:///usr/share/applications/kde4/systemsettings.desktop?wmClass=Systemsettings")</fillin>
  </item>
  <item>
@@ -716,10 +720,12 @@ awk '/match/{gsub(/match/,"");gsub(/&lt;>/,"");gsub(/&lt;\/>/,"");print $1}'  ~/
  </item>
  <item>
   <displayprefix></displayprefix>
-  <match>devicenotifier</match>
+  <match>device-notifier</match>
   <displaypostfix></displaypostfix>
   <displayarguments></displayarguments>
   <fillin>  var devicenotifier = panel.addWidget ("notifier")
+//devicenotifier.writeConfig("allDevices","true")
+//devicenotifier.writeConfig("removableDevices","false")
  </fillin>
  </item>
  <item>
