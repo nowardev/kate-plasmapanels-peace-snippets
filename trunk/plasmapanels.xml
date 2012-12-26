@@ -252,7 +252,7 @@ yawp.writeConfig("update interval","45")
  
 yawp.currentConfigGroup = new Array('locations')
 
-yawp.writeConfig("city01","accuweather,Verona\\, Italy(Veneto),Italy,it,EUR.IT.IT020.VERONA,Europe/Rome")
+yawp.writeConfig("city01",'accuweather,Verona\\, Italy(Veneto),Italy,it,EUR.IT.IT020.VERONA,Europe/Rome')
 yawp.writeConfig("selected","0")
  
 //yawp.geometry = new QRectF(0,0,screenrect.width/4,screenrect.height/3)</fillin>
